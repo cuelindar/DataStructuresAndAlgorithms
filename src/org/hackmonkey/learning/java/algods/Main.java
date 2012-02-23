@@ -9,13 +9,9 @@ public class Main {
 	 * @throws Exception 
 	 */
 	public static void main(String[] args) throws Exception {
-		Console con = System.console();
-		if (con != null){
-			con.printf("Hello, world!");
-			con.readLine();
-			System.exit(0);
-		}
-		throw(new Exception("Hey"));
+		System.out.println("Hello, another world!");
+		System.in.read();
+		System.exit(0);
 	}
 
 }
