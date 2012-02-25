@@ -1,7 +1,5 @@
 package org.hackmonkey.learning.java.algods;
 
-import java.io.Console;
-
 public class Main {
 
 	/**
@@ -9,8 +7,11 @@ public class Main {
 	 * @throws Exception 
 	 */
 	public static void main(String[] args) throws Exception {
-		System.out.println("Hello, another world!");
-		System.in.read();
+		Stack s = new Stack();
+		s.Push(new Object());
+		s.Push(new Object());
+		Object o = s.Pop();
+		o = s.Pop();
 		System.exit(0);
 	}
 
