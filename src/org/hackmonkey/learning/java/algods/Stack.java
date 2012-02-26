@@ -17,7 +17,7 @@ public class Stack <T> {
 		this(defaultInitialCapacity);
 	}
 	
-	public void Push(T item){
+	public void push(T item){
 		// if there's room, put the item on the stack
 		if(headIndex < currentCapacity-1){
 			rep[headIndex++] = item;
@@ -30,11 +30,11 @@ public class Stack <T> {
 			}
 			rep = newRep;
 			currentCapacity = newCapacity;
-			Push(item);
+			push(item);
 		}		
 	}
 	
-	public T Pop(){
+	public T pop(){
 		// make sure we're not going to fall off the bottom...
 		if(headIndex == 0){
 			return (T)null;

@@ -19,21 +19,21 @@ public class SampleTestCases {
 	@Test
 	public void testPush() {
 		Object in = new Object();
-		stack.Push(in);
+		stack.push(in);
 		assertEquals(stack.headIndex, 1);
 	}
 	
 	@Test
 	public void testPushPop() {
 		Object in = new Object();
-		stack.Push(in);
-		Object out = stack.Pop();
+		stack.push(in);
+		Object out = stack.pop();
 		assertEquals(in, out);
 	}
 	
 	@Test
 	public void testUnderflow(){
-		Object out = stack.Pop();
+		Object out = stack.pop();
 		assertNull(out);
 	}
 	
@@ -41,10 +41,11 @@ public class SampleTestCases {
 	public void testOverflow(){
 		int initialCapacity = stack.currentCapacity;
 		for(int i=0;i<initialCapacity;i++){
-			stack.Push(new Object());
+			stack.push(new Object());
 		}
-		stack.Push(new Object());
-		assertEquals(stack.headIndex,initialCapacity+1);
+		stack.push(new Object());
+		assertEquals(initialCapacity+1,stack.headIndex);
+		assertTrue((stack.currentCapacity>initialCapacity));
 	}
 
 }

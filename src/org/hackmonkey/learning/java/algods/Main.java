@@ -7,11 +7,11 @@ public class Main {
 	 * @throws Exception 
 	 */
 	public static void main(String[] args) throws Exception {
-		Stack s = new Stack();
-		s.Push(new Object());
-		s.Push(new Object());
-		Object o = s.Pop();
-		o = s.Pop();
+		Stack<Object> s = new Stack<Object>();
+		s.push(new Object());
+		s.push(new Object());
+		Object o = s.pop();
+		o = s.pop();
 		System.exit(0);
 	}
 
