@@ -27,7 +27,7 @@ public class StackWithTwoQueues<T> implements IStack<T> {
 		else{
 			leftQueue.enqueue(item);
 		}
-			
+		itemCount++;
 	}
 
 	@Override
