@@ -11,7 +11,7 @@ public class QueueTestCases {
 
 	@Before
 	public void setUp() throws Exception {
-		queue = new QueueWithTwoStacks<Object>();
+		queue = new QueueWithLinkedList<Object>();
 	}
 
 	@Test
