@@ -7,11 +7,8 @@ public class Main {
 	 * @throws Exception 
 	 */
 	public static void main(String[] args) throws Exception {
-		IStack<Object> s = new Stack<Object>();
-		s.push(new Object());
-		s.push(new Object());
-		Object o = s.pop();
-		o = s.pop();
+		System.out.println("That's a nice stack you've got there...");
+		System.in.read();
 		System.exit(0);
 	}
 
