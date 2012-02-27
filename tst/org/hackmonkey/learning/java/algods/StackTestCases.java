@@ -20,7 +20,7 @@ public class StackTestCases {
 	public void testPush() {
 		Object in = new Object();
 		stack.push(in);
-		assertEquals(stack.getItemCount(), 1);
+		assertEquals(1,stack.getItemCount());
 	}
 	
 	@Test
