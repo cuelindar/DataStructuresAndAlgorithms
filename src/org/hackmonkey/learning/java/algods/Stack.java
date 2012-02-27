@@ -1,7 +1,7 @@
 package org.hackmonkey.learning.java.algods;
 
 // implement a stack using an array
-public class Stack <T> {
+public class Stack <T> implements IStack<T> {
 	private static final int defaultInitialCapacity = 10;
 	protected int headIndex;
 	protected int currentCapacity;
@@ -17,6 +17,10 @@ public class Stack <T> {
 		this(defaultInitialCapacity);
 	}
 	
+	/* (non-Javadoc)
+	 * @see org.hackmonkey.learning.java.algods.IStack#push(T)
+	 */
+	@Override
 	public void push(T item){
 		// if there's room, put the item on the stack
 		if(headIndex < currentCapacity-1){
@@ -34,6 +38,10 @@ public class Stack <T> {
 		}		
 	}
 	
+	/* (non-Javadoc)
+	 * @see org.hackmonkey.learning.java.algods.IStack#pop()
+	 */
+	@Override
 	public T pop(){
 		// make sure we're not going to fall off the bottom...
 		if(headIndex == 0){

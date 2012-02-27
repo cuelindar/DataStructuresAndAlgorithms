@@ -7,7 +7,7 @@ public class Main {
 	 * @throws Exception 
 	 */
 	public static void main(String[] args) throws Exception {
-		Stack<Object> s = new Stack<Object>();
+		IStack<Object> s = new Stack<Object>();
 		s.push(new Object());
 		s.push(new Object());
 		Object o = s.pop();
