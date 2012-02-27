@@ -1,6 +1,6 @@
 package org.hackmonkey.learning.java.algods;
 
-public class Queue <T> {
+public class Queue <T> implements IQueue<T> {
 
 	protected Object[] rep;
 	protected int currentCapacity;
@@ -19,7 +19,13 @@ public class Queue <T> {
 		tailIndex = -1;
 	}
 	
-	public int itemCount(){
+	@Override
+	public int getCurrentCapacity(){
+		return currentCapacity;
+	}
+	
+	@Override
+	public int getItemCount(){
 		if(headIndex == -1) {return 0;}
 		if(headIndex > tailIndex){
 			return headIndex - tailIndex + 1;
@@ -36,7 +42,7 @@ public class Queue <T> {
 
 		// calculate the resulting size requested, and the number of items already enqueued
 		int newSize = currentCapacity + size;
-		int itemCount = itemCount();
+		int itemCount = getItemCount();
 
 		// make sure we don't select a new size too small to hold the existing items
 		if(newSize < itemCount){
@@ -62,9 +68,10 @@ public class Queue <T> {
 		return currentCapacity;
 	}
 	
+	@Override
 	public void enqueue(T item){
 		// see if the queue is empty, if so fix up the tail
-		int itemCount = itemCount();
+		int itemCount = getItemCount();
 		if(itemCount == 0){
 			tailIndex = 0;
 		}
@@ -83,9 +90,10 @@ public class Queue <T> {
 		rep[headIndex] = item;
 	}
 	
+	@Override
 	public T dequeue(){
 		// check how many items are in the queue
-		int itemCount = itemCount();
+		int itemCount = getItemCount();
 		
 		// if we're already empty, return null
 		if(itemCount ==0 ) {return (T)null;}

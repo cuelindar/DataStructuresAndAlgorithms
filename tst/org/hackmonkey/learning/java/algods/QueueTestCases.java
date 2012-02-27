@@ -16,7 +16,7 @@ public class QueueTestCases {
 
 	@Test
 	public void testEmptyCount(){
-		assertEquals(0,queue.itemCount());
+		assertEquals(0,queue.getItemCount());
 	}
 	
 	@Test
@@ -65,7 +65,7 @@ public class QueueTestCases {
 	@Test
 	public void testItemCountA(){
 		queue.enqueue(new Object());
-		assertEquals(1,queue.itemCount());
+		assertEquals(1,queue.getItemCount());
 	}
 
 	@Test
@@ -74,6 +74,6 @@ public class QueueTestCases {
 		for(int i=0;i<initialCapacity+1;i++){
 			queue.enqueue(new Object());			
 		}
-		assertEquals(initialCapacity+1,queue.itemCount());
+		assertEquals(initialCapacity+1,queue.getItemCount());
 	}
 }
