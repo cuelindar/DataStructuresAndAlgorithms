@@ -6,4 +6,7 @@ public interface IStack<T> {
 
 	public T pop();
 
+	public int getItemCount();
+	
+	public int getCurrentCapacity();
 }

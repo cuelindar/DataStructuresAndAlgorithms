@@ -5,9 +5,9 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-public class SampleTestCases {
+public class StackTestCases {
 	
-	protected Stack<Object> stack;
+	protected IStack<Object> stack;
 	
 	@Before
 	public void setup() {
@@ -20,7 +20,7 @@ public class SampleTestCases {
 	public void testPush() {
 		Object in = new Object();
 		stack.push(in);
-		assertEquals(stack.headIndex, 1);
+		assertEquals(stack.getItemCount(), 1);
 	}
 	
 	@Test
@@ -39,13 +39,13 @@ public class SampleTestCases {
 	
 	@Test
 	public void testOverflow(){
-		int initialCapacity = stack.currentCapacity;
+		int initialCapacity = stack.getCurrentCapacity();
 		for(int i=0;i<initialCapacity;i++){
 			stack.push(new Object());
 		}
 		stack.push(new Object());
-		assertEquals(initialCapacity+1,stack.headIndex);
-		assertTrue((stack.currentCapacity>initialCapacity));
+		assertEquals(initialCapacity+1,stack.getItemCount());
+		assertTrue((stack.getCurrentCapacity()>initialCapacity));
 	}
 
 }

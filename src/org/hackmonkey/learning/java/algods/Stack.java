@@ -17,6 +17,16 @@ public class Stack <T> implements IStack<T> {
 		this(defaultInitialCapacity);
 	}
 	
+	@Override
+	public int getItemCount(){
+		return headIndex;
+	}
+	
+	@Override
+	public int getCurrentCapacity(){
+		return currentCapacity;
+	}
+	
 	/* (non-Javadoc)
 	 * @see org.hackmonkey.learning.java.algods.IStack#push(T)
 	 */
