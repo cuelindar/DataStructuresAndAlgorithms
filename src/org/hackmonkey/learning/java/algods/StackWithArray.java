@@ -1,19 +1,19 @@
 package org.hackmonkey.learning.java.algods;
 
 // implement a stack using an array
-public class Stack <T> implements IStack<T> {
+public class StackWithArray <T> implements IStack<T> {
 	private static final int defaultInitialCapacity = 10;
 	protected int headIndex;
 	protected int currentCapacity;
 	protected Object[] rep;
 	
-	public Stack(int initialCapacity){
+	public StackWithArray(int initialCapacity){
 		rep = new Object[initialCapacity];
 		currentCapacity = initialCapacity;
 		headIndex = 0;
 	}
 	
-	public Stack(){
+	public StackWithArray(){
 		this(defaultInitialCapacity);
 	}
 	

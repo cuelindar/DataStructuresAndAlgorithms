@@ -7,8 +7,8 @@ public class QueueWithTwoStacks<T> implements IQueue<T> {
 	int itemCount;
 	
 	public QueueWithTwoStacks() {
-		leftStack = new Stack<T>();
-		rightStack = new Stack<T>();
+		leftStack = new StackWithArray<T>();
+		rightStack = new StackWithArray<T>();
 		itemCount = 0;
 	}
 
