@@ -7,11 +7,11 @@ import org.junit.Test;
 
 public class QueueTestCases {
 	
-	protected Queue<Object> queue;
+	protected IQueue<Object> queue;
 
 	@Before
 	public void setUp() throws Exception {
-		queue = new Queue<Object>();
+		queue = new QueueWithTwoStacks<Object>();
 	}
 
 	@Test
@@ -22,7 +22,7 @@ public class QueueTestCases {
 	@Test
 	public void testEnqueue() {
 		queue.enqueue(new Object());
-		assertEquals(0,queue.headIndex);
+		assertEquals(1,queue.getItemCount());
 	}
 	
 	@Test
@@ -41,17 +41,17 @@ public class QueueTestCases {
 	
 	@Test
 	public void testOverflow(){
-		int initialCapacity = queue.currentCapacity;
+		int initialCapacity = queue.getCurrentCapacity();
 		for(int i=0;i<initialCapacity;i++){
 			queue.enqueue(new Object());
 		}
 		queue.enqueue(new Object());
-		assertTrue(queue.currentCapacity > initialCapacity);
+		assertTrue(queue.getCurrentCapacity() > initialCapacity);
 	}
 	
 	@Test
 	public void testLoop(){
-		int initialCapacity = queue.currentCapacity;
+		int initialCapacity = queue.getCurrentCapacity();
 		Object in, out;
 		for(int i=0;i<initialCapacity+2;i++){
 			in = new Object();
@@ -59,7 +59,7 @@ public class QueueTestCases {
 			out = queue.dequeue();
 			assertSame(String.format("Dequeued object did not match enqueued object, iteration: %d.", i), in, out);
 		}
-		assertEquals(initialCapacity,queue.currentCapacity);
+		assertEquals(initialCapacity,queue.getCurrentCapacity());
 	}
 
 	@Test
@@ -70,7 +70,7 @@ public class QueueTestCases {
 
 	@Test
 	public void testItemCountB(){
-		int initialCapacity = queue.currentCapacity;
+		int initialCapacity = queue.getCurrentCapacity();
 		for(int i=0;i<initialCapacity+1;i++){
 			queue.enqueue(new Object());			
 		}
