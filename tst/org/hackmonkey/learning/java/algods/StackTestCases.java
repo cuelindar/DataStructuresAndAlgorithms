@@ -12,7 +12,7 @@ public class StackTestCases {
 	@Before
 	public void setup() {
 		stack = null;
-		stack = new StackWithTwoQueues<Object>();
+		stack = new StackWithLinkedList<Object>();
 		assertNotNull(stack);
 	}
 
